@@ -27,7 +27,7 @@ case "$uname_s" in
 	*) fail "OS not supported: $uname_s" ;;
 esac
 
-release_file="${TOOL_NAME}-${ASDF_INSTALL_VERSION}-${arch}-${os}.tar.gz"
+release_file="${TOOL_NAME}-v${ASDF_INSTALL_VERSION}-${arch}-${os}.tar.gz"
 
 # Download tar.gz file to the download directory
 download_release "$ASDF_INSTALL_VERSION" "$release_file"
