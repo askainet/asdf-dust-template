@@ -16,15 +16,15 @@ arch="$(uname -m)"
 os=""
 
 case "$uname_s" in
-	Darwin) os="apple-darwin" ;;
-	Linux)
-		if ldd /bin/ls | grep musl >/dev/null 2>&1; then
-			os="unknown-linux-musl"
-		else
-			os="unknown-linux-gnu"
-		fi
-		;;
-	*) fail "OS not supported: $uname_s" ;;
+Darwin) os="apple-darwin" ;;
+Linux)
+	if ldd /bin/ls | grep musl >/dev/null 2>&1; then
+		os="unknown-linux-musl"
+	else
+		os="unknown-linux-gnu"
+	fi
+	;;
+*) fail "OS not supported: $uname_s" ;;
 esac
 
 release_file="${TOOL_NAME}-v${ASDF_INSTALL_VERSION}-${arch}-${os}.tar.gz"
