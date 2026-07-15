@@ -13,7 +13,9 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
+          - ubuntu-24.04-arm
+          - macos-26-intel
+          # - macos-latest dust has no arm64 release for darwin
     runs-on: ${{ matrix.os }}
     steps:
       - name: asdf_plugin_test
